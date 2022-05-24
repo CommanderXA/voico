@@ -1,0 +1,17 @@
+[package]
+name = "voijix"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "3.1.18", features = ["derive"] }
+cpal = "0.13.5"
+color-eyre = "0.6.1"
+dasp = {version = "0.11.0", features = ["signal", "interpolate", "interpolate-linear"]}
+rusqlite = "0.27.0"
+chrono = "0.4.19"
+ctrlc = "3.2.2"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_yaml = "0.8.24"

@@ -1,0 +1,26 @@
+formats:
+  date: "%Y-%m-%d %H:%M:%S"
+
+db:
+  name: "voico"
+  user_version: 1
+  page_size: 8192
+  on_create:
+    "
+      CREATE TABLE IF NOT EXISTS clips(
+          id INTEGER PRIMARY KEY,
+          name TEXT NOT NULL UNIQUE,
+          date TEXT NIT NULL,
+          sample_rate INTERGER NOT NULL,
+          samples BLOB NOT NULL
+      );
+    "
+  # clips:
+  #   insert:
+  #     "
+  #       INSERT OR REPLACE INTO clips(id, name, date, sample_rate, samples)
+  #       VALUES (?1, ?2, ?3, ?4, ?5)
+  #     "
+  #   delete: "DELETE FROM clips WHERE name = ?1"
+  #   list: "SELECT id, name, date FROM clips ORDER BY date"
+  #   select: "SELECT * FROM clips WHERE name = ?1"
